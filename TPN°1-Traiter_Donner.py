@@ -7,7 +7,7 @@ import math
 def update():
     response=requests.get("https://portail-api-data.montpellier3m.fr/offstreetparking?limit=1000")
     data = response.json() # Convert the response to JSON data
-    with open('SAE_15_Traiter_des_données/data.json', 'w') as file:
+    with open('data/data.json', 'w') as file:
         json.dump(data, file, indent=4)
     return data
 
@@ -26,25 +26,25 @@ def pourcentage_occupation(data):
     return pourcentage_place
 
 def reading_data():
-    with open('SAE_15_Traiter_des_données/data.json') as file:
+    with open('data/data.json') as file:
         data = json.load(file)
     return data
 
 def write_place_libre(data):
-    with open('SAE_15_Traiter_des_données/place_libre.data', 'w') as file:
+    with open('data/place_libre.data', 'w') as file:
         for i in range(len(data)):
             if data[i]['status']['value'] == 'Open':
                 file.write(str(data[i]['availableSpotNumber']['value'])+'\n')
 
 def write_nom_place_libre(data):
-    with open('SAE_15_Traiter_des_données/nom_place_libre.data', 'w') as file:
+    with open('data/nom_place_libre.data', 'w') as file:
         for i in range(len(data)):
             if data[i]['status']['value'] == 'Open':
                 plibre = data[i]['availableSpotNumber']['value']
                 file.write(data[i]['name']['value'] + ' ' + str(plibre) + '\n')
 
 def write_datafile(data, name):
-    with open(f"SAE_15_Traiter_des_données/{name}.data", 'a') as file:
+    with open(f"data/{name}.data", 'a') as file:
         file.write(f"Mesure prise le : {data[0]['status']['metadata']['timestamp']['value']}\n")
         to_write = {}
         for i in range(len(data)):
@@ -55,7 +55,7 @@ def write_datafile(data, name):
         file.write(str(to_write) + '\n')
 
 def read_datafile(name):
-    with open(f'SAE_15_Traiter_des_données/{name}.data', 'r') as file:
+    with open(f'data/{name}.data', 'r') as file:
         lines = file.readlines()
         data = []
         for i in range(len(lines)):
@@ -77,5 +77,6 @@ def acquire_data(Te, durée, name='data'):
             data = reading_data()
             write_datafile(data, name)
             t = int(time.time())
+
 
 read_datafile('data')
