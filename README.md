@@ -1,6 +1,6 @@
 <a name="Traiter des Données"></a>
 
-<h3 align="center">SAE Données</h3>
+<h2 align="center">Mobilité à Montpellier</h2>
 
 <p align="center">
   Une chaîne de traitement automatisée pour collecter, nettoyer et analyser les flux de données d'occupation des parkings de Montpellier.
@@ -24,6 +24,17 @@
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
+
+<h3><u>À propos du projet</u></h3>
+
+<p>Ce projet vise à répondre aux besoins d'un professionnel R&T devant manipuler des données issues d'un système d'information</p>
+<p>L'objectif est de développer un programme Python capable d'automatiser la récupération de données brutes, de les traiter (nettoyage, calculs statistiques) et de les exporter dans un format structuré et exploitable (JSON).</p>
+
+<p>Les fonctionnalités principales sont :</p>
+<p>* Collecte automatisée via des requêtes HTTP (`requests`).</p>
+<p>* Parsing pour extraire les informations des balises des parkings.</p>
+<p>* Transformation des données hétérogènes en format JSON standardisé.</p>
+<p>* Archivage pour permettre une analyse de l'évolution temporelle.</p>
 
 <p align="center">
   <a href="https://github.com/Explosif3005/SAE_15-Traitement-des-donne-Puig_Dumont/issues">Signaler un Bug</a>
