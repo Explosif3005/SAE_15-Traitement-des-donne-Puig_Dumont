@@ -31,10 +31,21 @@
 <p>L'objectif est de développer un programme Python capable d'automatiser la récupération de données brutes, de les traiter (nettoyage, calculs statistiques) et de les exporter dans un format structuré et exploitable (JSON).</p>
 
 <p>Les fonctionnalités principales sont :</p>
-<p>* Collecte automatisée via des requêtes HTTP (`requests`).</p>
-<p>* Parsing pour extraire les informations des balises des parkings.</p>
-<p>* Transformation des données hétérogènes en format JSON standardisé.</p>
-<p>* Archivage pour permettre une analyse de l'évolution temporelle.</p>
+<p>* <b>Collecte</b> automatisée via des requêtes HTTP (`requests`).</p>
+<p>* <b>Parsing</b> pour extraire les informations des balises des parkings.</p>
+<p>* <b>Transformation</b> des données hétérogènes en format JSON standardisé.</p>
+<p>* <b>Archivage</b> pour permettre une analyse de l'évolution temporelle.</p>
+
+<h3><u>Architecture</u></h3>
+
+<p>Le projet est structuré pour séparer le code de collecte des fichiers de données :</p>
+
+<h3><u>Sources de données</u></h3>
+
+<p>Ce projet s'appuie sur l'Open Data de Montpellier Méditerranée Métropole.</p>
+
+    <p>* <b>Parkings Voiture :</b> Disponibilité en temps réel.</p>
+    <p>* <b>Vélomagg : </b> Disponibilité des vélos et places.</p>
 
 <p align="center">
   <a href="https://github.com/Explosif3005/SAE_15-Traitement-des-donne-Puig_Dumont/issues">Signaler un Bug</a>
