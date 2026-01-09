@@ -11,21 +11,21 @@
 <details>
   <summary>Table des Matières</summary>
   <ol>
-    <li><a href="#a-propos">À propos du projet</a></li>
-    <li><a href="#architecture">Architecture du Script</a></li>
-    <li><a href="#sources-de-données">Sources de Données (API)</a></li>
-    <li><a href="#structure-de-données">Structure de Données (JSON)</a></li>
-    <li><a href="#commencer">Pour commencer</a></li>
+    <li>À propos du projet</li>
+    <li>Architecture du Script</li>
+    <li>Sources de Données (API)</li>
+    <li>Structure de Données (JSON)</li>
+    <li>Pour commencer</li>
     <ul>
-        <li><a href="#prérequis">Prérequis</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li>Prérequis</li>
+        <li>Installation</li>
       </ul>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li>Usage</li>
+    <li>Contact</li>
   </ol>
 </details>
 
-<h3><u>À propos du projet</u></h3>
+<h3><em>À propos du projet</em></h3>
 
 <p>Ce projet vise à répondre aux besoins d'un professionnel R&T devant manipuler des données issues d'un système d'information</p>
 <p>L'objectif est de développer un programme Python capable d'automatiser la récupération de données brutes, de les traiter (nettoyage, calculs statistiques) et de les exporter dans un format structuré et exploitable (JSON).</p>
@@ -38,11 +38,11 @@
 <li><b>Archivage</b> pour permettre une analyse de l'évolution temporelle.</p>
 </ul>
 
-<h3><u>Architecture</u></h3>
+<h3><em>Architecture du Script</em></h3>
 
 <p>Le projet est structuré pour séparer le code de collecte des fichiers de données :</p>
 
-<h3><u>Sources de données</u></h3>
+<h3><em>Sources de Données (API)</em></h3>
 
 <p>Ce projet s'appuie sur l'Open Data de Montpellier Méditerranée Métropole via son <a href = 'https://portail-api.montpellier3m.fr/'>API</a> : </p>
 
@@ -57,7 +57,7 @@
   </li>
 </ul>
 
-<h3><u>Structure de Données (JSON)</u></h3>
+<h3><em>Structure de Données (JSON)</em></h3>
 
 <p>Le programme convertit les données JSON brutes en fichiers JSON structurés pour l'analyse.</p>
 
@@ -93,10 +93,10 @@
   ...
 </pre>
 
-<h3><u>Pour commencer</u></h3>
+<h3><em>Pour commencer</em></h3>
 
 <a name="prérequis"></a>
-<h4>Prérequis</h4>
+<h4><em>Prérequis</em></h4>
 <p>Ce projet utilise le langage <b>Python 3</b>.<br>
 Les librairies tierces suivantes sont nécessaires :</p>
 <ul>
@@ -104,6 +104,44 @@ Les librairies tierces suivantes sont nécessaires :</p>
   <li><code>json</code> : pour manipuler et parser les fichiers JSON.</li>
   <li><code>time</code> : pour gérer la temporalité des collectes.</li>
   <li><code>math</code> : pour la manipulation mathématique des donnée collecté.</li>
+</ul>
+
+<a name="installation"></a>
+<h4><em>Installation</em></h4>
+
+<p>1. Cloner le dépôt :</p>
+<pre>
+git clone https://github.com/Explosif3005/SAE_15-Traitement-des-donne-Puig_Dumont.git
+</pre>
+
+<p>2. Installer les dépendances :</p>
+<pre>
+pip install requests json time math
+</pre>
+
+<h3><em>Usage</em></h3>
+
+<p>Pour lancer l'automatisation de la collecte et du traitement, exécutez le script principal :</p>
+
+<pre>
+python main.py
+</pre>
+
+<p>Le script va :</p>
+<ol>
+  <li>Télécharger les fichiers JSON des parkings.</li>
+  <li>Extraire le nombre de places libres et totales.</li>
+  <li>Calculer le pourcentage d'occupation.</li>
+  <li>Sauvegarder le résultat dans le dossier <code>data/json/</code>.</li>
+</ol>
+
+<h3><em>Contact</em></h3>
+
+<p>Projet réalisé dans le cadre de la SAE 15 (IUT de Béziers).</p>
+<p><em>Personnes ayant contribué :</em></p>
+<ul>
+  <li><b>Dumont Tom</b></li>
+  <li><b>Puig Yaël</b></li>
 </ul>
 
 <p align="center">
