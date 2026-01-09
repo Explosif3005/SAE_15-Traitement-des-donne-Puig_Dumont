@@ -140,8 +140,8 @@ python main.py
 <p>Projet réalisé dans le cadre de la SAE 15 (IUT de Béziers).</p>
 <p><em>Personnes ayant contribué :</em></p>
 <ul>
-  <li><b>Dumont Tom</b></li>
-  <li><b>Puig Yaël</b></li>
+  <li><b><a href = '' >Dumont Tom</a></b></li>
+  <li><b><a href = 'https://github.com/Explosif3005' >Puig Yaël</a></b></li>
 </ul>
 
 <p align="center">
