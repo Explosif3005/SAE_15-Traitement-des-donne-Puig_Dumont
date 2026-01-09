@@ -33,9 +33,9 @@
 <p>Les fonctionnalités principales sont :</p>
 <ul>
 <li><b>Collecte</b> automatisée via des requêtes HTTP (`requests`).</li>
-<li><b>Parsing</b> pour extraire les informations des balises des parkings.</li>
+<li><b>Parsing</b> pour extraire les informations des réponse de l'API à propos des parkings.</li>
 <li><b>Transformation</b> des données hétérogènes en format JSON standardisé.</li>
-<li><b>Alirchivage</b> pour permettre une analyse de l'évolution temporelle.</p>
+<li><b>Archivage</b> pour permettre une analyse de l'évolution temporelle.</p>
 </ul>
 
 <h3><u>Architecture</u></h3>
@@ -48,13 +48,62 @@
 
 <ul>
   <li>
-    <b>Parkings Voiture (XML) :</b> Données de la Disponibilité en temps réel.
+    <b>Parkings Voiture (JSON) :</b> Données de la Disponibilité en temps réel.
     <br><i>Exemple : Parking Comédie.</i>
     <br>URL pour l'api : <code><a href = 'https://portail-api-data.montpellier3m.fr/offstreetparking?limit=1000'>https://portail-api-data.montpellier3m.fr/offstreetparking?limit=1000</a></code>
   </li>
   <li>
-    <b>Vélomagg (XML) :</b> Disponibilité des vélos et bornes.
+    <b>Vélomagg (JSON) :</b> Disponibilité des vélos et bornes.
   </li>
+</ul>
+
+<h3><u>Structure de Données (JSON)</u></h3>
+
+<p>Le programme convertit les données JSON brutes en fichiers JSON structurés pour l'analyse.</p>
+
+<p><b>Exemple de sortie :</b></p>
+<pre>
+[
+    {
+        "id": "urn:ngsi-ld:parking:001",
+        "type": "OffStreetParking",
+        "allowedVehicleType": {
+            "type": "StructuredValue",
+            "value": [
+                "car",
+                "moped"
+            ],
+            "metadata": {}
+        },
+        "availableSpotNumber": {
+            "type": "Number",
+            "value": 133,
+            "metadata": {
+                "timestamp": {
+                    "type": "DateTime",
+                    "value": "2025-12-19T10:10:22.000Z"
+                }
+            }
+        },
+        "name": {
+            "type": "Text",
+            "value": "Antigone",
+            "metadata": {}
+        },
+  ...
+</pre>
+
+<h3><u>Pour commencer</u></h3>
+
+<a name="prérequis"></a>
+<h4>Prérequis</h4>
+<p>Ce projet utilise le langage <b>Python 3</b>.<br>
+Les librairies tierces suivantes sont nécessaires :</p>
+<ul>
+  <li><code>requests</code> : pour effectuer les requêtes HTTP.</li>
+  <li><code>json</code> : pour manipuler et parser les fichiers JSON.</li>
+  <li><code>time</code> : pour gérer la temporalité des collectes.</li>
+  <li><code>math</code> : pour la manipulation mathématique des donnée collecté.</li>
 </ul>
 
 <p align="center">
