@@ -135,12 +135,12 @@ python main.py
   <li>Sauvegarder le résultat dans le dossier <code>data/json/</code>.</li>
 </ol>
 
-<h3><em>Contact</em></h3>
+<h3><em>Contributeur</em></h3>
 
 <p>Projet réalisé dans le cadre de la SAE 15 (IUT de Béziers).</p>
 <p><em>Personnes ayant contribué :</em></p>
 <ul>
-  <li><b><a href = '' >Dumont Tom</a></b></li>
+  <li><b><a href = 'https://github.com/Tictumbras' >Dumont Tom</a></b></li>
   <li><b><a href = 'https://github.com/Explosif3005' >Puig Yaël</a></b></li>
 </ul>
 
