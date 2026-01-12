@@ -28,13 +28,15 @@ def acquire_data(Te, durée, name='data'):
     t = temps
     while t < (temps + durée):
         if int(time.time()) > (t + Te):
-            update()
-            data = reading_data()
-            write_datafile(data, name)
+            data = request_data("https://portail-api-data.montpellier3m.fr/offstreetparking?limit=1000", 'parking')
+            write_datafile(data, f"{name}_parking")
+            data = request_data("https://portail-api-data.montpellier3m.fr/bikestation?limit=1000", 'bikestation')
+            write_datafile(data, f"{name}_bikestation")
             t = int(time.time())
 
 
 read_datafile('data')
+
 
 
 
