@@ -36,7 +36,7 @@
 <li><b>Parsing</b> pour extraire les informations des réponse de l'API à propos des parkings.</li>
 <li><b>Transformation</b> des données 'datafiles' hétérogènes en format JSON standardisé.</li>
 <li><b>Archivage</b> des donnée dans des fichier 'datafiles' pour permettre une analyse de l'évolution temporelle.</li>
-<li><b>Analyse<b> des données récolté grace à des outils mathématique de base.</li></p>
+<li><b>Analyse</b> des données récolté grace à des outils mathématique de base.</li></p>
 </ul>
 
 <h3><em>Architecture du Script</em></h3>
