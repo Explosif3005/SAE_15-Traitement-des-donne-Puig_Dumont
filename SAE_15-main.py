@@ -1,8 +1,13 @@
+# Importation of base python libraries:
 import json
 import time
-import statistiques
 import requests
 import math
+
+#Importation of the project libraries:
+import statistiques
+import tfiles
+import API_fonctions
 
 def pourcentage_occupation(data):
     sum_plibre = 0
@@ -30,4 +35,5 @@ def acquire_data(Te, durée, name='data'):
 
 
 read_datafile('data')
+
 
