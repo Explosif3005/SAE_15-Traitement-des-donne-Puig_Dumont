@@ -34,8 +34,9 @@
 <ul>
 <li><b>Collecte</b> automatisée via des requêtes HTTP (`requests`).</li>
 <li><b>Parsing</b> pour extraire les informations des réponse de l'API à propos des parkings.</li>
-<li><b>Transformation</b> des données hétérogènes en format JSON standardisé.</li>
-<li><b>Archivage</b> pour permettre une analyse de l'évolution temporelle.</p>
+<li><b>Transformation</b> des données 'datafiles' hétérogènes en format JSON standardisé.</li>
+<li><b>Archivage</b> des donnée dans des fichier 'datafiles' pour permettre une analyse de l'évolution temporelle.</li>
+<li><b>Analyse<b> des données récolté grace à des outils mathématique de base.</li></p>
 </ul>
 
 <h3><em>Architecture du Script</em></h3>
@@ -80,9 +81,9 @@ SAE15-Montpellier/
 
 <h3><em>Structure de Données (JSON)</em></h3>
 
-<p>Le programme convertit les données JSON brutes en fichiers JSON structurés pour l'analyse.</p>
+<p>Le programme convertit les données JSON brutes en fichiers datafile structurés pour l'analyse.</p>
 
-<p><b>Exemple de sortie :</b></p>
+<p><b>Exemple de sortie JSON :</b></p>
 <pre>
 [
     {
@@ -112,6 +113,16 @@ SAE15-Montpellier/
             "metadata": {}
         },
   ...
+</pre>
+
+<p><b>Exemple de sortie datafile :</b></p>
+<pre>
+  Mesure prise le : 2025-12-23T11:35:12.000Z
+{"Antigone": {"type_vehicule": ["car", "moped"], "place_libre": 159, "place_totale": 239, "status": "Open"}, "Comedie": {"type_vehicule": ["car", "moped"], "place_libre": 303, "place_totale": 664, "status": "Open"}, ...}
+Mesure prise le : 2025-12-23T12:55:12.000Z
+{"Antigone": {"type_vehicule": ["car", "moped"], "place_libre": 157, "place_totale": 239, "status": "Open"}, "Comedie": {"type_vehicule": ["car", "moped"], "place_libre": 258, "place_totale": 664, "status": "Open"}, ...}
+Mesure prise le : 2025-12-23T13:55:14.000Z
+{"Antigone": {"type_vehicule": ["car", "moped"], "place_libre": 159, "place_totale": 239, "status": "Open"}, "Comedie": {"type_vehicule": ["car", "moped"], "place_libre": 248, "place_totale": 664, "status": "Open"}, ...}
 </pre>
 
 <h3><em>Pour commencer</em></h3>
@@ -151,9 +162,8 @@ python SAE_15-main.py
 <p>Le script va :</p>
 <ol>
   <li>Télécharger les fichiers JSON des parkings.</li>
-  <li>Extraire le nombre de places libres et totales.</li>
-  <li>Calculer le pourcentage d'occupation.</li>
-  <li>Sauvegarder le résultat dans le dossier <code>data/json/</code>.</li>
+  <li>Extraire le nom, l'état du parking, le nombre de places libres et totales.</li>
+  <li>Sauvegarde le résultat dans des fichier 'datafile' spécifique dans le dossier <code>data</code>.</li>
 </ol>
 
 <h3><em>Contributeur</em></h3>
