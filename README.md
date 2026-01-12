@@ -117,12 +117,46 @@ SAE15-Montpellier/
 
 <p><b>Exemple de sortie datafile :</b></p>
 <pre>
-  Mesure prise le : 2025-12-23T11:35:12.000Z
-{"Antigone": {"type_vehicule": ["car", "moped"], "place_libre": 159, "place_totale": 239, "status": "Open"}, "Comedie": {"type_vehicule": ["car", "moped"], "place_libre": 303, "place_totale": 664, "status": "Open"}, ...}
+Mesure prise le : 2025-12-23T11:35:12.000Z
+{
+  "Antigone": {
+    "type_vehicule": ["car", "moped"], 
+    "place_libre": 159, 
+    "place_totale": 239, 
+    "status": "Open"}, 
+  "Comedie": {
+    "type_vehicule": ["car", "moped"], 
+    "place_libre": 303, 
+    "place_totale": 664, 
+    "status": "Open"}, ...
+}
 Mesure prise le : 2025-12-23T12:55:12.000Z
-{"Antigone": {"type_vehicule": ["car", "moped"], "place_libre": 157, "place_totale": 239, "status": "Open"}, "Comedie": {"type_vehicule": ["car", "moped"], "place_libre": 258, "place_totale": 664, "status": "Open"}, ...}
+{
+  "Antigone": {
+    "type_vehicule": ["car", "moped"], 
+    "place_libre": 157, 
+    "place_totale": 239, 
+    "status": "Open"}, 
+  "Comedie": {
+    "type_vehicule": ["car", "moped"], 
+    "place_libre": 258, 
+    "place_totale": 664, 
+    "status": "Open"}, ...
+}
 Mesure prise le : 2025-12-23T13:55:14.000Z
-{"Antigone": {"type_vehicule": ["car", "moped"], "place_libre": 159, "place_totale": 239, "status": "Open"}, "Comedie": {"type_vehicule": ["car", "moped"], "place_libre": 248, "place_totale": 664, "status": "Open"}, ...}
+{
+  "Antigone": {
+    "type_vehicule": ["car", "moped"], 
+    "place_libre": 159, 
+    "place_totale": 239, 
+    "status": "Open"}, 
+  "Comedie": {
+    "type_vehicule": ["car", "moped"], 
+    "place_libre": 248, 
+    "place_totale": 664, 
+    "status": "Open"}, ...
+}
+...
 </pre>
 
 <h3><em>Pour commencer</em></h3>
@@ -163,7 +197,7 @@ python SAE_15-main.py
 <ol>
   <li>Télécharger les fichiers JSON des parkings.</li>
   <li>Extraire le nom, l'état du parking, le nombre de places libres et totales.</li>
-  <li>Sauvegarde le résultat dans des fichier 'datafile' spécifique dans le dossier <code>data</code>.</li>
+  <li>Sauvegarde le résultat dans des fichier 'datafile' spécifique dans le dossier <code>./data</code>.</li>
 </ol>
 
 <h3><em>Contributeur</em></h3>
