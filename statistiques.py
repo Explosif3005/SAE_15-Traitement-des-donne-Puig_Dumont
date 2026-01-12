@@ -43,6 +43,9 @@ def covariance(l1,l2):
     return sum / lenght
 
 def correlation(l1,l2):
+    return covariance(l1,l2) / sqrt(variance(l1)*variance(l2))
+
+def correlation_bornée(l1,l2):
     return covariance(l1,l2) / (variance(l1)*variance(l2))
 
 def matrice_covariance(L_liste):
@@ -60,25 +63,27 @@ def matrice_correlation(L_liste):
     k = 0
     for i in range(N):
         for j in range(N):
-            matrice[j][i] = correlation(L_liste[i],L_liste[j])
+            matrice[j][i] = correlation_bornée(L_liste[i],L_liste[j])
     return matrice
 
 
 """
 Data for library testing
 """
-T=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23] 
+#T=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23] 
 
-L1=[3,3,4,3,2,5,8,9,13,16,18,18,19,21,22,22,21,17,17,12,10,8,7,4]
-L2=[103,203,4,3,2,5,8,9,13,16,18,18,19,21,22,22,21,17,17,12,10,-92,-93,-96]
+#L1=[3,3,4,3,2,5,8,9,13,16,18,18,19,21,22,22,21,17,17,12,10,8,7,4]
+#L2=[103,203,4,3,2,5,8,9,13,16,18,18,19,21,22,22,21,17,17,12,10,-92,-93,-96]
 
-L1_moyenne = 11,75
-L1_sigma = 6,89
-L2_moyenne = 11,75
-L2_sigma = 57,42
+#L1_moyenne = 11,75
+#L1_sigma = 6,89
+#L2_moyenne = 11,75
+#L2_sigma = 57,42
 
-L = [L1,L2]
+#L = [L1,L2]
 
 #print(moyenne(L1), ecart_type(L1))
 #print(moyenne(L2), ecart_type(L2))
+
 #print(covariance(L1,L2), correlation(L1,L2), matrice_correlation(L))
+
