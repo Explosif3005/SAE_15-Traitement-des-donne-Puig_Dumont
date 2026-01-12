@@ -43,6 +43,9 @@ def covariance(l1,l2):
     return sum / lenght
 
 def correlation(l1,l2):
+    return covariance(l1,l2) / sqrt(variance(l1)*variance(l2))
+
+def correlation_bornée(l1,l2):
     return covariance(l1,l2) / (variance(l1)*variance(l2))
 
 def matrice_covariance(L_liste):
@@ -60,7 +63,7 @@ def matrice_correlation(L_liste):
     k = 0
     for i in range(N):
         for j in range(N):
-            matrice[j][i] = correlation(L_liste[i],L_liste[j])
+            matrice[j][i] = correlation_bornée(L_liste[i],L_liste[j])
     return matrice
 
 
@@ -81,4 +84,5 @@ L = [L1,L2]
 
 #print(moyenne(L1), ecart_type(L1))
 #print(moyenne(L2), ecart_type(L2))
+
 #print(covariance(L1,L2), correlation(L1,L2), matrice_correlation(L))
