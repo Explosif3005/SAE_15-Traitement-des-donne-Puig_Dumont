@@ -2,8 +2,13 @@
 """
 tfiles.py
 In this library will be compiled all fonction for reading and writing files for this project:
-reading_data():
-A fonction with the goal of reading 'data.json', and returning the corresponding json data.
+writing_data(data -> json, name -> str):
+A fonction with the goal of taking the data from the parameter data and writing it in the corresponding json file:
+f"data_{name}.json", where {name} correspond to the given str in the parameter 'name'.
+return data -> json
+
+reading_data(name -> str):
+A fonction with the goal of reading f"data_{name}.json", and returning the corresponding json data.
 return data -> json
 
 write_place_libre(data -> json):
@@ -23,9 +28,13 @@ return data -> json
 
 
 """
+def writing_data(data, name):
+    with open(f"data/data_{name}.json", 'w') as file:
+        json.dump(data, file, indent=4)
+    return data
 
-def reading_data():
-    with open('data/data.json') as file:
+def reading_data(name):
+    with open(f"data/data_{name}.json", 'r') as file:
         data = json.load(file)
     return data
 
