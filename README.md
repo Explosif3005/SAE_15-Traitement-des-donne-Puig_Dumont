@@ -40,8 +40,29 @@
 
 <h3><em>Architecture du Script</em></h3>
 
-<p>Le projet est structuré pour séparer le code de collecte des fichiers de données :</p>
+<p>Le projet est structuré et divisé en 4 scritps principaux :</p>
+<pre>
+SAE15-Montpellier/
+├── APIfonctions.py      # Gestion des appels aux API (récupération des données)
+├── SAE_15-main.py       # Programme principal (...)
+├── statistiques.py      # Fonctions mathématiques (Moyenne,Écart-type...)
+├── tfiles.py            # Gestion des entrées/sorties fichiers (Lecture/Écriture)
+└── data/                # Dossier de stockage des JSON et fichiers .data
+</pre>
 
+<p><b>Détail des modules :</b></p>
+<ul>
+    <li><code>SAE_15-main.py</code> : Le script principal qui lance la récolte des données via l' adresse configurée.</li>
+    <li><code>APIfonctions.py</code> : Contient toutes les fonctions qui interagissent directement avec les API web.</li>
+    <li><code>statistiques.py</code> : Contient les outils d'analyse mathématique.</li>
+    <li><code>tfiles.py</code> : Librairie de gestion de fichiers. Elle inclut :
+        <ul>
+            <li><code>reading_data()</code> : Lecture des fichiers JSON.</li>
+            <li><code>write_place_libre()</code> : Génération du fichier des places disponibles ligne par ligne.</li>
+            <li><code>write_datafile()</code> & <code>read_datafile()</code> : Création et lecture des fichiers d'archivage propriétaires.</li>
+        </ul>
+    </li>
+</ul>
 <h3><em>Sources de Données (API)</em></h3>
 
 <p>Ce projet s'appuie sur l'Open Data de Montpellier Méditerranée Métropole via son <a href = 'https://portail-api.montpellier3m.fr/'>API</a> : </p>
@@ -116,7 +137,7 @@ git clone https://github.com/Explosif3005/SAE_15-Traitement-des-donne-Puig_Dumon
 
 <p>2. Installer les dépendances :</p>
 <pre>
-pip install requests json time math
+pip install requests
 </pre>
 
 <h3><em>Usage</em></h3>
@@ -124,7 +145,7 @@ pip install requests json time math
 <p>Pour lancer l'automatisation de la collecte et du traitement, exécutez le script principal :</p>
 
 <pre>
-python main.py
+python SAE_15-main.py
 </pre>
 
 <p>Le script va :</p>
