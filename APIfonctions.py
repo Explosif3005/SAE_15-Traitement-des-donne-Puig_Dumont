@@ -11,6 +11,4 @@ return data -> json
 def request_data(URL, name):
     response=requests.get(URL)
     data = response.json() # Convert the response to JSON data
-    with open(f"data/data_{name}.json", 'w') as file:
-        json.dump(data, file, indent=4)
     return data
