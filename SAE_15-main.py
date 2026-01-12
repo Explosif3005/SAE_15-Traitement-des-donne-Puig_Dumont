@@ -33,9 +33,14 @@ def acquire_data(Te, durée, name='data'):
             data = APIfonctions.request_data("https://portail-api-data.montpellier3m.fr/bikestation?limit=1000", 'bikestation')
             tfiles.write_datafile(data, f"{name}_bikestation")
             t = int(time.time())
-
-
-read_datafile('data')
+print('----------------------------------------------')
+print('\tSAE_15-Traitement_de_Donnée-main.py')
+print('----------------------------------------------')
+Te_input = input("De combiens de seconde voulez vous que le délai soit?\n>")
+Duration_input = input("Pendans combiens de temps doit le script torner?\n>")
+print(f"Lancement du script pendant {Duration_input}s avec un délait entre chanque requete de {Te_input}s")
+acquire_data(Te_input, Duration_input)
+print("Aquisition de donnée terminée!")
 
 
 
