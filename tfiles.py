@@ -28,6 +28,9 @@ return data -> json
 
 
 """
+#Imporation of APIfonctions (it is renammed as DataF[Data Fonctions] for readability reason)
+import APIfonctions as DataF
+
 def writing_data(data, name):
     with open(f"data/data_{name}.json", 'w') as file:
         json.dump(data, file, indent=4)
@@ -41,15 +44,14 @@ def reading_data(name):
 def write_place_libre(data):
     with open('data/place_libre.data', 'w') as file:
         for i in range(len(data)):
-            if data[i]['status']['value'] == 'Open':
-                file.write(str(data[i]['availableSpotNumber']['value'])+'\n')
+            if DataF.find_parking_state(data[i]) == 'Open':
+                file.write(str(DataF.find_parking_available_spot(data[i])+'\n')
 
 def write_nom_place_libre(data):
     with open('data/nom_place_libre.data', 'w') as file:
         for i in range(len(data)):
-            if data[i]['status']['value'] == 'Open':
-                plibre = data[i]['availableSpotNumber']['value']
-                file.write(data[i]['name']['value'] + ' ' + str(plibre) + '\n')
+            if DataF.find_parking_state(data[i]) == 'Open':
+                file.write(DataF.find_parking_name(data[i]) + ' ' + str(DataF.find_parking_available_spot(data[i])) + '\n')
 
 def write_datafile(data, name):
     with open(f"data/{name}.data", 'a') as file:
@@ -57,9 +59,9 @@ def write_datafile(data, name):
         to_write = {}
         for i in range(len(data)):
             # The line is broken two time because it is too big
-            to_write[data[i]['name']['value']] = {'type_vehicule': data[i]['allowedVehicleType']['value'],\
-                 'place_libre': data[i]['availableSpotNumber']['value'], 'place_totale': data[i]['totalSpotNumber']['value'],\
-                    'status': data[i]['status']['value']}
+            to_write[DataF.find_parking_name(data[i])] = {'type_vehicule': data[i]['allowedVehicleType']['value'],\
+                 'place_libre': DataF.find_parking_available_spot(data[i]), 'place_totale': DataF.find_parking_total_spot(data[i]),\
+                    'status': DataF.find_state(data[i])}
         file.write(str(to_write) + '\n')
 
 def read_datafile(name):
