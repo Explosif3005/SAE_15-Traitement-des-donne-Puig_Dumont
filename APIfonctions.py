@@ -22,50 +22,40 @@ def find_parkings_names(data):
     for i in range(len(data)):
         response.append(data[i]['name']['value'])
     return response
+    
+def find_parking_name(data):
+    return data['address']['value']['streetAddress']
 
-def find_parking_occupation(data, name):
-    for i in range(len(data)):
-        if name == data[i]['name']['value']:
-            return (data[i]['totalSpotNumber']['value'] - data[i]['availableSpotNumber']['value'])
+def find_parking_occupation(data):
+    return (data[i]['totalSpotNumber']['value'] - data[i]['availableSpotNumber']['value'])
 
-def find_parking_total_place(data, name):
-    for i in range(len(data)):
-        if name == data[i]['name']['value']:
-            return data[i]['totalSpotNumber']['value']
+def find_parking_total_spot(data):
+    return data[i]['totalSpotNumber']['value']
 
-def find_parking_available_place(data, name):
-    for i in range(len(data)):
-        if name == data[i]['name']['value']:
-            return data[i]['availableSpotNumber']['value']
+def find_parking_available_spot(data, name):
+    return data[i]['availableSpotNumber']['value']
 
-def find_parking_state(data, name):
-    for i in range(len(data)):
-        if name == data[i]['name']['value']:
-            return data[i]['status']['value']
+def find_parking_state(data):
+    return data[i]['status']['value']
 #-------------------------------------------
-def find_bike_names(data):
+def find_bikes_names(data):
     response = []
     for i in range(len(data)):
         response.append(data[i]['address']['value']['streetAddress'])
     return response
 
-def find_bike_occupation(data, name):
-    for i in range(len(data)):
-        if name == data[i]['name']['value']:
-            return data[i]['freeSlotNumber']['value']
+def find_bike_name(data):
+    return data['address']['value']['streetAddress']
 
-def find_bike_total_place(data, name):
-    for i in range(len(data)):
-        if name == data[i]['name']['value']:
-            return data[i]['totalSlotNumber']['value']
+def find_bike_occupation(data):
+    return data[i]['freeSlotNumber']['value']
 
-def find_bike_available_place(data, name):
-    for i in range(len(data)):
-        if name == data[i]['name']['value']:
-            return data[i]['availableBikeNumber']['value']
+def find_bike_total_slot(data):
+    return data[i]['totalSlotNumber']['value']
 
-def find_bike_state(data, name):
-    for i in range(len(data)):
-        if name == data[i]['name']['value']:
-            return data[i]['status']['value']
+def find_bike_available_slot(data):
+    return data[i]['availableBikeNumber']['value']
+
+def find_bike_state(data):
+    return data[i]['status']['value']
     
