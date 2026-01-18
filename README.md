@@ -44,11 +44,23 @@
 <p>Le projet est structuré et divisé en 4 scritps principaux :</p>
 <pre>
 SAE15-Montpellier/
+│
 ├── APIfonctions.py      # Gestion des appels aux API (récupération des données)
-├── SAE_15-main.py       # Programme principal (...)
-├── statistiques.py      # Fonctions mathématiques (Moyenne,Écart-type...)
+├── SAE_15-main.py       # Programme principal
+├── statistiques.py      # Fonctions mathématiques (Moyenne,Écart-type,Corrélation,...)
 ├── tfiles.py            # Gestion des entrées/sorties fichiers (Lecture/Écriture)
-└── data/                # Dossier de stockage des JSON et fichiers .data
+├── README.md            # Documentation technique du projet
+│
+├── data/                 # Dossier de stockage des JSON et fichiers .data
+│   ├── data_bikestation.json   # Données brutes des vélos
+│   ├── data_parking.json       # Données brutes des parkings
+│   └── data_parking.data       # Historique archivé
+│
+└── site/                # Interface Web
+    ├── index.html       # Structure de la page
+    ├── style.css        # Mise en forme et design
+    ├── script.js        # Logique d'affichage (Carte Leaflet, Graphiques)
+    └── images/          # Dossier contenant les graphiques générés par Python et la matrice de corrélation  
 </pre>
 
 <p><b>Détail des modules :</b></p>
