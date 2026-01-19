@@ -215,6 +215,9 @@ python SAE_15-main.py
 <h3><em>Contributeur</em></h3>
 
 <p>Projet réalisé dans le cadre de la SAE 15 (IUT de Béziers).</p>
+<p>
+    <strong>🌐 <a href="https://sae-15-traitement-des-donne-puig-du.vercel.app/">Accéder au Tableau de Bord en ligne</a></strong>
+</p>
 <p><em>Personnes ayant contribué :</em></p>
 <ul>
   <li><b><a href = 'https://github.com/Tictumbras' >Dumont Tom</a></b></li>
