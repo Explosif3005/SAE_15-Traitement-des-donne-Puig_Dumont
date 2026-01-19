@@ -19,6 +19,7 @@
         <ul>
             <li class="active" onclick="switchTab('dashboard')"><i class="fas fa-chart-line"></i> Vue Générale & Carte</li>
             <li onclick="switchTab('graphs')"><i class="fas fa-images"></i> Analyse Graphique</li>
+            <li onclick="switchTab('top-correlations')"><i class="fas fa-trophy"></i> TOP Corrélations</li>
             <li onclick="switchTab('export')"><i class="fas fa-file-download"></i> Espace Maire (Export)</li>
         </ul>
         <div class="footer-nav">
@@ -119,6 +120,29 @@
             </div>
         </div>
 
+        <div id="top-correlations" class="tab-section">
+            <div class="card">
+                <h3>🏆 TOP 20 des Corrélations les plus fortes</h3>
+                <p>Ce classement identifie les liens les plus puissants (positifs ou négatifs) entre un Parking et une Station Vélo.</p>
+                
+                <div class="table-responsive">
+                    <table class="top-table">
+                        <thead>
+                            <tr>
+                                <th>Rang</th>
+                                <th>Parking</th>
+                                <th>Station Vélo</th>
+                                <th>Force du lien</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody id="top-corr-body">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
         <div id="export" class="tab-section">
             <div class="card export-zone">
                 <div class="export-header">
@@ -146,5 +170,4 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
