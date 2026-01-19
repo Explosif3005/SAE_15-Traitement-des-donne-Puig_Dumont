@@ -123,6 +123,40 @@ select { flex: 1; padding: 6px; border: 1px solid #ccc; border-radius: 6px; font
 .compare-item .img-wrapper { height: 220px; min-height: auto; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .compare-item img { height: 100%; width: auto; max-width: 100%; object-fit: contain; }
 
+/* --- STYLE POUR LE TOP CORRÉLATIONS --- */
+.top-table th { background-color: #f8f9fa; color: #2c3e50; }
+.top-table td { vertical-align: middle; }
+
+.rank-badge {
+    background-color: var(--dark);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Couleurs spécifiques pour le TOP 3 */
+tr:nth-child(1) .rank-badge { background-color: #FFD700; color: #000; } /* Or */
+tr:nth-child(2) .rank-badge { background-color: #C0C0C0; color: #000; } /* Argent */
+tr:nth-child(3) .rank-badge { background-color: #CD7F32; color: #000; } /* Bronze */
+
+.tag-corr {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.tag-pos { background-color: #ffe0db; color: #c0392b; } /* Rouge clair */
+.tag-neg { background-color: #d6eaf8; color: #3498db; } /* Bleu clair */
+.tag-strong { border: 2px solid; } /* Bordure pour les très forts */
+
 @media (max-width: 768px) {
     body { flex-direction: column; overflow: auto; }
     .sidebar { width: 100%; flex-direction: row; padding: 10px; justify-content: space-between; }
